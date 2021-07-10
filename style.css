@@ -1,0 +1,22 @@
+html,body{
+  margin:0;
+  padding:0;
+  background-color:rgba(10,10,10,1);
+  font-family: 'Comfortaa';font-size: 22px;
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: aliceblue;
+}
+
+canvas{
+  position:absolute;
+  left:0;
+  top:0;
+  margin:0;
+  overflow: hidden;
+}
