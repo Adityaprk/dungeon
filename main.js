@@ -3,9 +3,7 @@ var loop = requestAnimationFrame(StartingScreen);
 let lastTime = window.performance.now()
 let delta = window.performance.now() - lastTime;
 
-let currentLevel = 1;
-
-var levels = new Levels();
+var areas = new Areas();
 
 function StartingScreen(){
   ctx.fillStyle = "rgba(40,40,40,1)";
@@ -13,7 +11,7 @@ function StartingScreen(){
   delta = window.performance.now() - lastTime;
   lastTime = window.performance.now();
 
-  levels.update(currentLevel);
+  areas.update(player.area);
 
   player.draw();
   player.move(delta);

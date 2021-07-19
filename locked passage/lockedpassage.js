@@ -1,32 +1,21 @@
-function clamp(min,max,val){
-  if(val < min){
-    return min;
-  }else if(val > max){
-    return max;
-  }else{
-    return val;
-  }
-}
+let lock = new Image();
+lock.src = "locked passage/images/lock.png";
 
-function distance(x1, y1, x2, y2){
-  let dx = x2 - x1;
-  let dy = y2 - y1;
-  return Math.sqrt(dx*dx+dy*dy);
-}
-
-class Wall {
-  constructor(x, y, width, height){
+class LockedPassage {
+  constructor(x, y, width, height, color){
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
     this.state = true;
     this.distTraveled = 0;
-    this.type = "wall";
+    this.type = "locked passage";
+    this.color = color;
   }
   draw(){
-    ctx.fillStyle = "rgba(0,0,0,1)";
+    ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.drawImage(lock, this.x + this.width/2 - 35, this.y + this.height/2 - 70, 80, 100);
   }
   col(){
     let px = clamp(this.x, this.x+this.width, player.pos.x);

@@ -6,6 +6,7 @@ class Lava {
     this.height = height;
     this.state = true;
     this.distTraveled = 0;
+    this.type = "lava";
   }
   draw(){
     ctx.fillStyle = "rgba(255,0,0,1)";
@@ -18,8 +19,8 @@ class Lava {
     let dist = distance(px, py, player.pos.x, player.pos.y);
 
     if(dist < player.radius){
-      player.pos.x = canvas.width/2;
-      player.pos.y = canvas.height/2;
+      player.pos.x = player.respawnPoint.x;
+      player.pos.y = player.respawnPoint.y;
     }
   }
 }
